@@ -45,4 +45,3 @@ c)
     2. Sistemi za preporuke (Youtube) - u redu je preporučiti nešto što korisnika potencijalno ne zanima, nego obrnuto
     3. Detekcija osobe za kredit - u redu je propustiti osobu koja deluje kao dobar kandidat za davanje kredita, nego dati kredit osobi
        koja ne može da otplati kredit
-
