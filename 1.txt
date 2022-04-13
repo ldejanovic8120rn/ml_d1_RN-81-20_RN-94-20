@@ -1,1 +1,48 @@
-TODO popuniti odgovorima na pitanja iz problema 1
+a)
+- Normalizacija predstavlja prilagođavanje podataka, tako da se vrednosti podataka proporcionalno adaptiraju na željeni interval,
+bez uticaja na obradu i količinu podataka.
+
+- Formula: (x - μ) / σ
+
+- x - podatak koji se normalizuje
+- μ - srednja vrednost
+- σ - standardna devijacija
+
+
+- Regularizacija - je proces koji ograničava/reguliše ili smanjuje procene koeficijenata ka nuli.
+Drugim rečima, ova tehnika obeshrabruje učenje složenijih ili fleksibilnijih modela, kako bi se izbegao rizik
+od prekomernog prilagođavanja (overfitting).
+
+
+b)
+- TP = True Positive, primeri iz klase 1 koje naš model uspešno dodeljuje klasi 1
+- TN = True Negative, primeri iz klase 0 koje naš model uspešno dodeljuje klasi 0
+- FP = False Positive, primeri iz klase 0 koje naš model neuspešno dodeljuje klasi 1
+- FN = False Negative, primeri iz klase 1 koje naš model neuspešno dodeljuje klasi 0
+
+- Precision (P) =  𝑇𝑃/(𝑇𝑃+𝐹𝑃)  tj. tačno klasifikovani iz klase 1 u odnosu na sve klasifikovane kao klasa 1
+- Recall (R) =  𝑇𝑃/(𝑇𝑃+𝐹𝑁) , tj. tačno klasifikovani iz klase 1 u odnosu na sve iz klase 1
+
+- Precision i Recall su obrnuto srazmerni, odnosno što je precision veći, to je recall manji i obrnuto.
+
+- Primeri za precision i recall:
+    1. Precision - Detekcija kancera - bitnije nam je da sve pozitivne klasifikujemo kao pozitivne,
+       po cenu da imamo više negativnih, nego da propustimo nekog pozitivnog i klasifikujemo ga kao negativnog.
+       Možemo da radimo dalja ispitivanja nad negativnim uzorcima, koje smo klasifikovali kao pozitivne.
+       Precision je niži, Recall je viši
+    2. Recall - Spam filter - bitnije nam je da sve mailove koji nisu spam (negativni su) klasifikujemo kao negativne,
+       po cenu da nam upadne neka reklama (pozitivni mailovi - spam mailovi), nego da propustimo neki bitan mail i klasifikujemo ga kao spam.
+       Precision je viši, Recall je niži
+
+c)
+- Primeri za FP:
+    1. Detekcija bolesti
+    2. Detekcija eksplicitnog sadržaja za društvenu mrežu (bolje da nam promanke slika bez eksplicitnog sadržaja, nego obrnuto)
+    3. Detekcija sumnjivih transakcija u banci (bolje da nam promakne transakcija koja nije sumnjiva, nego obrnuto)
+
+- Primeri za FN:
+    1. Spam filter
+    2. Sistemi za preporuke (Youtube) - u redu je preporučiti nešto što korisnika potencijalno ne zanima, nego obrnuto
+    3. Detekcija osobe za kredit - u redu je propustiti osobu koja deluje kao dobar kandidat za davanje kredita, nego dati kredit osobi
+       koja ne može da otplati kredit
+
