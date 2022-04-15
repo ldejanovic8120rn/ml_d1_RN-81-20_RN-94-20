@@ -25,9 +25,9 @@ skupi_senzori_data['date end'] = pd.to_datetime(skupi_senzori_data['date end']).
 skupi_senzori_data['date end'] = pd.to_datetime(skupi_senzori_data['date end']) + pd.DateOffset(hours=-2)
 skupi_senzori_data.drop('time end', axis='columns', inplace=True)
 
-# for index, row in skupi_senzori_data.iterrows():
-#     result = jeftini_senzori_data[np.logical_and(row['date beginning'] <= jeftini_senzori_data['date'], jeftini_senzori_data['date'] < row['date end'])]
-#     print(result)
+for index, row in skupi_senzori_data.iterrows():
+    result = jeftini_senzori_data[np.logical_and(row['date beginning'] <= jeftini_senzori_data['date'], jeftini_senzori_data['date'] < row['date end'])]
+    print(result)
 
 # print('FOR')
 # for index, row in skupi_senzori_data.iterrows():
@@ -36,13 +36,13 @@ skupi_senzori_data.drop('time end', axis='columns', inplace=True)
 
 # print(skupi_senzori_data)
 
-df = pd.DataFrame(columns=['date', 'temp', 'humind', 'pm2', 'date beginning', 'date end', 'reference pm2'])
-cnt = 0
-for index_j, row_j in jeftini_senzori_data.iterrows():
-    for index_s, row_s in skupi_senzori_data.iterrows():
-        if row_s['date beginning'] <= row_j['date'] <= row_s['date end']:
-            df.loc[cnt] = [row_j['date'], row_j['temp'], row_j['humind'], row_j['pm2'], row_s['date beginning'], row_s['date end'], row_s['PM2.5_ambient - #11']]
-            cnt += 1
-            print(df)
+# df = pd.DataFrame(columns=['date', 'temp', 'humind', 'pm2', 'date beginning', 'date end', 'reference pm2'])
+# cnt = 0
+# for index_j, row_j in jeftini_senzori_data.iterrows():
+#     for index_s, row_s in skupi_senzori_data.iterrows():
+#         if row_s['date beginning'] <= row_j['date'] <= row_s['date end']:
+#             df.loc[cnt] = [row_j['date'], row_j['temp'], row_j['humind'], row_j['pm2'], row_s['date beginning'], row_s['date end'], row_s['PM2.5_ambient - #11']]
+#             cnt += 1
+#             print(df)
 
 # jeftini_senzori_data.to_excel('./data/2aa.xls', index=False, header=False)
