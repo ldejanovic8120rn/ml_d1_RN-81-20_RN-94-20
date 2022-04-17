@@ -34,4 +34,5 @@ for index, row in skupi_senzori_data.iterrows():
         df.loc[cnt] = [r['date'], r['temp'], r['humid'], r['pm2'], row['date beginning'], row['date end'], row['PM2.5_ambient - #11']]
         cnt += 1
 
-df.to_excel('./2a.xls', index=False, header=True)
+df['reference pm2'] = df['reference pm2'].str.replace(',', '.')
+df.to_csv('./2a.xls', index=False, header=True, encoding="utf-8", sep="\t")
